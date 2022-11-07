@@ -43,9 +43,7 @@ public class Main {
                         resultText = text;
                     }
                 }
-                System.out.println("Текст - '" + resultText.substring(0, 10) +
-                        "...' содержет самое большое колличество символов 'a' " +
-                        result + " шт.");
+                result(resultText, 'a', result);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -68,10 +66,8 @@ public class Main {
                         resultText = text;
                     }
                 }
-                System.out.println("Текст - '" + resultText.substring(0, 10) +
-                        "...' содержет самое большое колличество символов 'b' " +
-                        result + " шт.");
-            } catch (InterruptedException e) {
+                result(resultText, 'b', result);
+             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         });
@@ -93,9 +89,7 @@ public class Main {
                         resultText = text;
                     }
                 }
-                System.out.println("Текст - '" + resultText.substring(0, 10) +
-                        "...' содержет самое большое колличество символов 'c' " +
-                        result + " шт.");
+                result(resultText, 'c', result);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -119,5 +113,11 @@ public class Main {
             text.append(letters.charAt(random.nextInt(letters.length())));
         }
         return text.toString();
+    }
+
+    public static void result (String resultText, char symbol, int result){
+        System.out.println("Текст - '" + resultText.substring(0, 10) +
+                "...' содержет самое большое колличество символов '" + symbol + "' " +
+                result + " шт.");
     }
 }
